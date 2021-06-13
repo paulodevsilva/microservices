@@ -1,0 +1,20 @@
+version: "3"
+services:
+    search_pendencies:
+        build:
+            context: ./search_pendencies
+        command: yarn start:dev
+        volumes:
+            - "./search_pendencies:/src/app"
+        working_dir: "/src/app"
+        ports:
+            - "3000:3000"
+    make_appointment:
+        build:
+          context: ./make_appointment
+        command: yarn start:dev
+        volumes:
+            - "./make_appointment:/src/app"
+        working_dir: "/src/app"
+        ports:
+           - "3001:3001"
